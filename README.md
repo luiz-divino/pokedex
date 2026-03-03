@@ -1,5 +1,5 @@
 
-⭐Pokédex Challenge - Por Luiz Fernando
+⭐Pokédex - Por Luiz Fernando
 
 Olá! Este projeto foi desenvolvido como um desafio técnico para a vaga de Desenvolvedor Front-end. O objetivo principal foi construir uma Pokédex funcional, performática e elegante. Espero que gostem.
 
