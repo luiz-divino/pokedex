@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*Pokédex Challenge - Por Luiz Fernando
+Olá! Este projeto foi desenvolvido como um desafio técnico para a vaga de Desenvolvedor Front-end. O objetivo principal foi construir uma Pokédex funcional, performática e elegante. Espero que gostem.
 
-Currently, two official plugins are available:
+🚀 Tecnologias Utilizadas
+As tecnologias propostas para realizar o desafio foram:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React.js : **Usei + vite
 
-## React Compiler
+TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tailwind CSS
 
-## Expanding the ESLint configuration
+Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React Icons: Utilizado para implementar um spinner de carregamento profissional.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+💡 Soluções e Decisões Técnicas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Um dos maiores desafios técnicos foi o fato do endpoint de listagem não fornecer as imagens oficiais.
+Minha solução: Em vez de sobrecarregar a rede com 151 chamadas extras de API (uma para cada Pokémon), utilizei uma lógica de manipulação de strings. Extraí o ID único da URL de referência e montei dinamicamente o link para as artes oficiais em alta resolução, pois o ID de cada pokemon é universal e usado para consultar qualquer dado daquele pokemon.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Isso resultou em uma economia massiva de recursos e um carregamento instantâneo para o usuário.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Experiência do Usuário (UX)
+Performance com Lazy Loading: Apliquei o atributo loading="lazy" em todas as imagens da lista. Isso garante que o navegador só baixe os dados conforme o usuário rola a página, otimizando o consumo de internet.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Identidade Visual: Configurei um Favicon de Pokébola e títulos de página dinâmicos para que o projeto pareça uma aplicação completa e não apenas um teste técnico.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Feedback Constante: Implementei estados de loading com um spinner animado do react-icons, garantindo que o usuário saiba que a aplicação está processando os dados.
+
+🛠️ Funcionalidades
+Exploração dos 151 Originais: Listagem completa da primeira geração com nomes e IDs formatados (#001, #002...).
+
+Ficha Técnica Detalhada: Ao clicar em um card, o usuário acessa dados específicos como Peso, Altura e Tipagem (ex: Fogo, Água).
+
+Navegação: Utilização de rotas dinâmicas (/pokemon/:name) usando Params pagar pegar o nome do pokemon e usar como parametro de rota com react-router-dom para uma navegação fluida sem recarregamento de página.
+
+Layout Responsivo: O grid de Pokémon se ajusta automaticamente para oferecer a melhor visualização no Windows (desktop), tablets ou celulares.
+
+⚙️ Como Executar o Projeto
+Clone este repositório.
+
+No terminal, instale as dependências:
+
+Bash
+npm install
+Inicie o servidor de desenvolvimento:
+
+Bash
+npm run dev
+
+Se você gostou do meu projeto, deixe uma estrela😁⭐
+- Luiz Fernando
