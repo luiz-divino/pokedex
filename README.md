@@ -14,7 +14,7 @@ Tailwind CSS
 
 Axios
 
-React Icons: Utilizado para implementar um spinner de carregamento profissional.
+*React Icons: Utilizei por conta propria para implementar um spinner de carregamento profissional.
 
 💡 Soluções e Decisões Técnicas
 
