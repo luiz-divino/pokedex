@@ -44,11 +44,9 @@ Clone este repositório.
 
 No terminal, instale as dependências:
 
-Bash
 npm install
 Inicie o servidor de desenvolvimento:
 
-Bash
 npm run dev
 
 Se você gostou do meu projeto, deixe uma estrela😁⭐
